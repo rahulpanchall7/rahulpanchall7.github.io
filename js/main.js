@@ -25,3 +25,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+// Project Tabs Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const tabButtons = document.querySelectorAll('.project-tab-btn');
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons and categories
+      document.querySelectorAll('.project-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.project-category').forEach(cat => cat.classList.remove('active'));
+      
+      // Add active class to clicked button
+      button.classList.add('active');
+      
+      // Show corresponding category
+      const category = button.getAttribute('data-category');
+      document.getElementById(`${category}-projects`).classList.add('active');
+    });
+  });
+});
+
+// Animation on scroll
+const animateOnScroll = () => {
+  const elements = document.querySelectorAll('.animate-on-scroll');
+  
+  elements.forEach(element => {
+    const elementPosition = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    
+    if (elementPosition < screenPosition) {
+      element.classList.add('animated');
+    }
+  });
+};
+
+window.addEventListener('scroll', animateOnScroll);
+// Initial check in case elements are already in view
+animateOnScroll();

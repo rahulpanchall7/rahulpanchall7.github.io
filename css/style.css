@@ -60,7 +60,7 @@ a {
 }
 
 a:hover {
-  color: var(--accent-light);
+  color: var(--accent-light); 
 }
 
 .btn {
@@ -350,6 +350,54 @@ nav {
   background-color: var(--primary);
 }
 
+.category-label {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  z-index: 1;
+}
+
+.robotics-label { background-color: var(--highlight-blue); }
+.android-label { background-color: var(--highlight-green); }
+
+.project-category {
+  display: none;
+}
+
+.project-category.active {
+  display: block;
+}
+
+.project-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.project-tab-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.project-tab-btn.active {
+  background: var(--accent);
+  color: white;
+}
+
+.project-tab-btn:hover:not(.active) {
+  background: #d0d0d0;
+}
+
 .section-subtitle {
   font-size: 1.8rem;
   font-weight: 600;
@@ -365,17 +413,16 @@ nav {
 }
 
 .project-card {
-  background: #fff;
-  color: #111; /* Ensure text color is dark inside white cards */
-}
-.project-card h3,
-.project-card p,
-.project-skills li {
-  color: #111;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-card img {
@@ -415,6 +462,39 @@ nav {
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
+}
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay a {
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.project-overlay a:hover {
+  transform: scale(1.2);
 }
 
 
