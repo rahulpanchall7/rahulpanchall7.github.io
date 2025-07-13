@@ -890,12 +890,11 @@
     </header>
 
     <!-- Hero Section -->
-    <!-- Update your Hero Section with this code -->
+    <!-- Updated Hero Section -->
     <section id="hero">
         <div class="container">
             <div class="hero-content animate-on-scroll">
                 <div class="hero-text">
-                    <h4 class="mono">Hi, my name is</h4>
                     <h1>Rahul Panchal.</h1>
                     <h2 id="typing-text">I build <span class="typed"></span></h2>
                     <p>I'm a robotics engineer specializing in ROS, AI, and automation systems. Currently seeking full-time opportunities to develop cutting-edge robotic solutions.</p>
@@ -904,11 +903,13 @@
                         <a href="#contact" class="btn">Contact Me</a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="profile-photo-container">
-                        <img src="[YOUR-PHOTO-URL]" alt="Rahul Panchal" class="profile-photo">
-                        <div class="photo-border"></div>
-                        <div class="photo-glow"></div>
+                <div class="hero-image-wrapper">
+                    <div class="hero-image">
+                        <div class="profile-photo-container">
+                            <img src="[YOUR-PHOTO-URL]" alt="Profile Photo" class="profile-photo">
+                            <div class="photo-border"></div>
+                            <div class="photo-glow"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -918,28 +919,33 @@
         </svg>
     </section>
 
-    <!-- Add this CSS to your style section -->
     <style>
-        /* Hero Section Layout */
+        /* Updated Hero Section Layout */
         .hero-content {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             gap: 50px;
         }
 
         .hero-text {
             flex: 1;
+            min-width: 55%; /* Give more space to text */
             max-width: 600px;
         }
 
-        .hero-image {
+        .hero-image-wrapper {
             flex: 1;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start; /* Changed from center to flex-start */
+            padding-left: 50px; /* Added padding to prevent touching edge */
         }
 
-        /* Profile Photo Styles */
+        .hero-image {
+            max-width: 350px;
+            width: 100%;
+        }
+
+        /* Profile Photo Styles (unchanged) */
         .profile-photo-container {
             position: relative;
             width: 350px;
@@ -1005,14 +1011,15 @@
                 text-align: center;
             }
             
-            .hero-buttons {
+            .hero-image-wrapper {
                 justify-content: center;
+                padding-left: 0;
+                margin-top: 40px;
             }
             
             .profile-photo-container {
                 width: 250px;
                 height: 250px;
-                margin-top: 40px;
             }
         }
     </style>
