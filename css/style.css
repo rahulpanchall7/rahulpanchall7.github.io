@@ -8,9 +8,15 @@
   --text-primary: #e6f1ff;
   --text-secondary: #a8b2d1;
   --highlight: #ff7e5f;
-  --highlight-green: #4CAF50;
-  --highlight-blue: #4cc9f0;
-  --highlight-purple: #7209b7;
+  --highlight-green: #4CAF50;       
+  --highlight-blue: #2196F3;     
+  --highlight-purple: #9C27B0;     
+  --highlight-orange: #FF9800;     
+  --highlight-teal: #009688;       
+  --highlight-pink: #E91E63;       
+  --highlight-cyan: #00BCD4;       
+  --highlight-yellow: #FFC107;      
+  --highlight-gray: #757575;   
   --transition: all 0.3s ease-in-out;
   --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
   --section-padding: 100px 0;
