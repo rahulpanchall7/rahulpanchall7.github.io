@@ -917,17 +917,20 @@
         }
 
         .hero-image-container {
-            flex: 1;
+            position: absolute;
+            top: 100px; /* Adjust this to move vertically */
+            right: 0;
+            width: 35%; /* Controls photo container width */
+            height: auto;
             display: flex;
             justify-content: flex-end;
-            height: 100%;
+            align-items: flex-start; /* Aligns to top */
         }
 
         /* Polygon Photo Styles */
         .polygon-photo {
-            position: relative;
-            width: 400px;
-            height: 500px;
+            width: 280px; /* Smaller width */
+            height: 350px; /* Maintains 4:5 aspect ratio */
             clip-path: polygon(
                 0% 15%,
                 15% 0%,
@@ -936,7 +939,8 @@
                 85% 100%,
                 0% 100%
             );
-            margin-right: -50px; /* Extends to edge */
+            margin-right: 0; /* Remove negative margin */
+            margin-top: 20px; /* Add space from top */
         }
 
         .profile-photo {
@@ -1009,20 +1013,23 @@
         }
 
         @media (max-width: 900px) {
-            .hero-content {
-                flex-direction: column;
-            }
-            
             .hero-image-container {
-                justify-content: center;
+                position: relative;
+                top: auto;
+                right: auto;
                 width: 100%;
-                margin-top: 40px;
+                justify-content: center;
+                margin-top: 30px;
             }
             
             .polygon-photo {
-                margin-right: 0;
-                width: 300px;
-                height: 380px;
+                width: 250px;
+                height: 312px; /* Maintain same ratio */
+            }
+            
+            .hero-text {
+                width: 100%;
+                padding-right: 0;
             }
         }
     </style>
