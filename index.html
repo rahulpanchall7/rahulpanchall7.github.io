@@ -875,10 +875,16 @@
     </header>
 
     <!-- Hero Section -->
-    <!-- Updated Hero Section -->
     <section id="hero">
         <div class="container">
             <div class="hero-content animate-on-scroll">
+                <div class="hero-image-container">
+                    <div class="polygon-photo">
+                        <img src="[YOUR-PHOTO-URL]" alt="Profile Photo" class="profile-photo">
+                        <div class="polygon-border"></div>
+                        <div class="polygon-glow"></div>
+                    </div>
+                </div>
                 <div class="hero-text">
                     <h1>Rahul Panchal.</h1>
                     <h2 id="typing-text">I build <span class="typed"></span></h2>
@@ -886,13 +892,6 @@
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-filled">View Projects</a>
                         <a href="#contact" class="btn">Contact Me</a>
-                    </div>
-                </div>
-                <div class="hero-image-container">
-                    <div class="polygon-photo">
-                        <img src="[YOUR-PHOTO-URL]" alt="Profile Photo" class="profile-photo">
-                        <div class="polygon-border"></div>
-                        <div class="polygon-glow"></div>
                     </div>
                 </div>
             </div>
@@ -914,23 +913,21 @@
             flex: 1;
             min-width: 50%;
             max-width: 600px;
+            padding-left: 30px; /* Added spacing between photo and text */
         }
 
         .hero-image-container {
-            position: absolute;
-            top: 100px; /* Adjust this to move vertically */
-            right: 0;
-            width: 35%; /* Controls photo container width */
-            height: auto;
+            flex: 1;
             display: flex;
-            justify-content: flex-end;
-            align-items: flex-start; /* Aligns to top */
+            justify-content: flex-start; /* Changed to left alignment */
+            align-items: flex-start;
+            max-width: 400px;
         }
 
         /* Polygon Photo Styles */
         .polygon-photo {
-            width: 280px; /* Smaller width */
-            height: 350px; /* Maintains 4:5 aspect ratio */
+            width: 280px;
+            height: 350px;
             clip-path: polygon(
                 0% 15%,
                 15% 0%,
@@ -939,8 +936,8 @@
                 85% 100%,
                 0% 100%
             );
-            margin-right: 0; /* Remove negative margin */
-            margin-top: 20px; /* Add space from top */
+            margin-left: -30px; /* Slight overlap with container edge */
+            margin-top: 20px;
         }
 
         .profile-photo {
@@ -973,12 +970,12 @@
         .polygon-glow {
             position: absolute;
             top: -10px;
-            right: -10px;
+            left: -10px; /* Glow now on left side */
             width: 110%;
             height: 110%;
-            background: linear-gradient(135deg, 
-                    rgba(100, 255, 218, 0.6) 0%, 
-                    rgba(100, 255, 218, 0) 50%);
+            background: linear-gradient(225deg, /* Adjusted angle */
+                rgba(100, 255, 218, 0.6) 0%, 
+                rgba(100, 255, 218, 0) 50%);
             clip-path: polygon(
                 0% 15%,
                 15% 0%,
@@ -1007,29 +1004,32 @@
         /* Responsive */
         @media (max-width: 1100px) {
             .polygon-photo {
-                width: 350px;
-                height: 450px;
+                width: 250px;
+                height: 312px;
             }
         }
 
         @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
             .hero-image-container {
-                position: relative;
-                top: auto;
-                right: auto;
-                width: 100%;
                 justify-content: center;
-                margin-top: 30px;
+                width: 100%;
+                max-width: none;
+                margin-bottom: 30px;
             }
             
             .polygon-photo {
-                width: 250px;
-                height: 312px; /* Maintain same ratio */
+                margin-left: 0;
+                width: 280px;
+                height: 350px;
             }
             
             .hero-text {
-                width: 100%;
-                padding-right: 0;
+                padding-left: 0;
+                text-align: center;
             }
         }
     </style>
