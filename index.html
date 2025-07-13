@@ -15,10 +15,10 @@
             --primary: #0a192f;
             --secondary: #172a45;
             --accent: #64ffda;
-            --accent-light: #8892b0;
+            --accent-light: #94a2cc;
             --accent-dark: #112240;
-            --text-primary: #ccd6f6;
-            --text-secondary: #a8b2d1;
+            --text-primary: #e6f1ff;
+            --text-secondary: #b8c2e0;
             --pink: #ff63c3;
             --blue: #57cbff;
             --purple: #9d65ff;
@@ -41,6 +41,9 @@
             line-height: 1.6;
             overflow-x: hidden;
             counter-reset: section;
+            font-weight: 400; 
+            text-rendering: optimizeLegibility; 
+            -webkit-font-smoothing: antialiased;
         }
 
         .mono {
@@ -83,6 +86,8 @@
             white-space: nowrap;
             position: relative;
             margin: 10px 0 40px;
+            font-weight: 700; /* Add this */
+                letter-spacing: -0.5px; 
         }
 
         .section-title h2::before {
@@ -235,6 +240,7 @@
             margin-bottom: 15px;
             line-height: 1.1;
             color: var(--text-primary);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
         }
 
         .hero-content h2 {
@@ -529,6 +535,7 @@
         .project-info h3 {
             margin-bottom: 10px;
             color: var(--text-primary);
+            font-weight: 600;
         }
 
         .project-info p {
@@ -536,6 +543,7 @@
             font-size: 0.9rem;
             margin-bottom: 15px;
             flex-grow: 1;
+            line-height: 1.7; 
         }
 
         .project-tech {
@@ -551,6 +559,7 @@
             border-radius: 3px;
             font-size: 0.8rem;
             font-family: 'Space Mono', monospace;
+            font-weight: 500;
         }
 
         /* Project Tabs */
@@ -682,6 +691,10 @@
             color: var(--text-primary);
             font-family: 'Space Grotesk', sans-serif;
             transition: var(--transition);
+            background-color: var(--accent-dark);
+            border: 1px solid var(--accent-light); 
+            color: var(--text-primary);
+            
         }
 
         .contact-form input:focus,
@@ -728,6 +741,8 @@
             color: var(--primary);
             background-color: var(--accent);
             transform: translateY(-3px);
+            opacity: 1 !important; /* Add this */
+            text-shadow: 0 0 5px rgba(100, 255, 218, 0.3); /* Add this */
         }
 
         .footer-text {
