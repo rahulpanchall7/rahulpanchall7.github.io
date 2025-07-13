@@ -553,6 +553,83 @@
             font-family: 'Space Mono', monospace;
         }
 
+        /* Project Tabs */
+        .project-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .project-tab-btn {
+            padding: 12px 24px;
+            margin: 0 10px;
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--accent);
+            border-radius: 30px;
+            font-family: 'Space Mono', monospace;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .project-tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .project-tab-btn:hover::before,
+        .project-tab-btn.active::before {
+            width: 100%;
+        }
+        
+        .project-tab-btn.active {
+            color: var(--primary);
+            border-color: transparent;
+        }
+        
+        .project-category {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .project-category.active {
+            display: grid;
+        }
+        
+        /* Category Indicators */
+        .category-label {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Space Mono', monospace;
+            z-index: 2;
+        }
+        
+        .robotics-label {
+            background-color: var(--blue);
+            color: var(--primary);
+        }
+        
+        .android-label {
+            background-color: var(--pink);
+            color: var(--primary);
+        }
+
         /* Contact Section */
         #contact {
             background-color: var(--secondary);
@@ -761,6 +838,17 @@
             .section-title h2::after {
                 width: 100px;
             }
+
+            .project-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .project-tab-btn {
+                margin: 5px 0;
+                width: 200px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -905,85 +993,146 @@
             <div class="section-title">
                 <h2>Projects</h2>
             </div>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1478&q=80" alt="RL-Based UR5 Control">
-                        <div class="project-overlay">
-                            <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" title="View Code"><i class="fab fa-github"></i></a>
+            
+            <!-- Project Category Tabs -->
+            <div class="project-tabs animate-on-scroll">
+                <button class="project-tab-btn active" data-category="robotics">Robotics/Embedded/AI</button>
+                <button class="project-tab-btn" data-category="android">Android Development</button>
+            </div>
+            
+            <!-- Robotics/Embedded/AI Projects -->
+            <div class="project-category active" id="robotics-projects">
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card animate-on-scroll">
+                        <span class="category-label robotics-label">Robotics</span>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1478&q=80" alt="RL-Based UR5 Control">
+                            <div class="project-overlay">
+                                <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>RL-Based UR5 Control</h3>
+                            <p>Trained reinforcement learning algorithms for precise UR5 robotic arm control in Isaac Sim with ROS2</p>
+                            <div class="project-tech">
+                                <span class="tech-item">ROS2</span>
+                                <span class="tech-item">Isaac Sim</span>
+                                <span class="tech-item">Python</span>
+                                <span class="tech-item">RL</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>RL-Based UR5 Control</h3>
-                        <p>Trained reinforcement learning algorithms for precise UR5 robotic arm control in Isaac Sim with ROS2</p>
-                        <div class="project-tech">
-                            <span class="tech-item">ROS2</span>
-                            <span class="tech-item">Isaac Sim</span>
-                            <span class="tech-item">Python</span>
-                            <span class="tech-item">RL</span>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card animate-on-scroll">
+                        <span class="category-label robotics-label">AI</span>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1581093057306-c4117d9e4d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="NAO Robot Control">
+                            <div class="project-overlay">
+                                <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>NAO Robot Control</h3>
+                            <p>MPC solution for real-time upper body stabilization in humanoid robots during dynamic motions</p>
+                            <div class="project-tech">
+                                <span class="tech-item">C++</span>
+                                <span class="tech-item">MPC</span>
+                                <span class="tech-item">Humanoid</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card animate-on-scroll">
+                        <span class="category-label robotics-label">Embedded</span>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Drone Swarm">
+                            <div class="project-overlay">
+                                <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Air Quality Monitoring Swarm</h3>
+                            <p>ROS2-enabled Crazyflie drone swarm with integrated sensors for real-time air quality monitoring</p>
+                            <div class="project-tech">
+                                <span class="tech-item">ROS2</span>
+                                <span class="tech-item">PX4</span>
+                                <span class="tech-item">IoT</span>
+                                <span class="tech-item">Swarm</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1581093057306-c4117d9e4d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="NAO Robot Control">
-                        <div class="project-overlay">
-                            <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" title="View Code"><i class="fab fa-github"></i></a>
+            </div>
+            
+            <!-- Android Projects -->
+            <div class="project-category" id="android-projects">
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card animate-on-scroll">
+                        <span class="category-label android-label">Android</span>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Android App">
+                            <div class="project-overlay">
+                                <a href="#" title="Play Store"><i class="fab fa-google-play"></i></a>
+                                <a href="#" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Robotics Controller App</h3>
+                            <p>Android application for controlling ROS-based robots with custom UI and telemetry visualization</p>
+                            <div class="project-tech">
+                                <span class="tech-item">Kotlin</span>
+                                <span class="tech-item">ROS</span>
+                                <span class="tech-item">WebSockets</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>NAO Robot Control</h3>
-                        <p>MPC solution for real-time upper body stabilization in humanoid robots during dynamic motions</p>
-                        <div class="project-tech">
-                            <span class="tech-item">C++</span>
-                            <span class="tech-item">MPC</span>
-                            <span class="tech-item">Humanoid</span>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card animate-on-scroll">
+                        <span class="category-label android-label">Android</span>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1581093057306-c4117d9e4d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Android App">
+                            <div class="project-overlay">
+                                <a href="#" title="Play Store"><i class="fab fa-google-play"></i></a>
+                                <a href="#" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>AI Vision App</h3>
+                            <p>Mobile application implementing real-time computer vision with TensorFlow Lite for object detection</p>
+                            <div class="project-tech">
+                                <span class="tech-item">Java</span>
+                                <span class="tech-item">TensorFlow Lite</span>
+                                <span class="tech-item">OpenCV</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Drone Swarm">
-                        <div class="project-overlay">
-                            <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" title="View Code"><i class="fab fa-github"></i></a>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card animate-on-scroll">
+                        <span class="category-label android-label">Android</span>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Android App">
+                            <div class="project-overlay">
+                                <a href="#" title="Play Store"><i class="fab fa-google-play"></i></a>
+                                <a href="#" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Air Quality Monitoring Swarm</h3>
-                        <p>ROS2-enabled Crazyflie drone swarm with integrated sensors for real-time air quality monitoring</p>
-                        <div class="project-tech">
-                            <span class="tech-item">ROS2</span>
-                            <span class="tech-item">PX4</span>
-                            <span class="tech-item">IoT</span>
-                            <span class="tech-item">Swarm</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Event Camera">
-                        <div class="project-overlay">
-                            <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" title="View Code"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Event Camera Segmentation</h3>
-                        <p>Motion segmentation pipeline using stereo event cameras with neural network depth/pose estimation</p>
-                        <div class="project-tech">
-                            <span class="tech-item">Event Cameras</span>
-                            <span class="tech-item">TensorFlow</span>
-                            <span class="tech-item">Computer Vision</span>
+                        <div class="project-info">
+                            <h3>IoT Dashboard</h3>
+                            <p>Android application for monitoring and controlling IoT devices with Firebase backend</p>
+                            <div class="project-tech">
+                                <span class="tech-item">Kotlin</span>
+                                <span class="tech-item">Firebase</span>
+                                <span class="tech-item">MQTT</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1085,6 +1234,24 @@
                 // Add active class to clicked button and corresponding content
                 btn.classList.add('active');
                 document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Project Category Tabs
+        const projectTabBtns = document.querySelectorAll('.project-tab-btn');
+        const projectCategories = document.querySelectorAll('.project-category');
+        
+        projectTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const categoryId = btn.getAttribute('data-category');
+                
+                // Remove active class from all buttons and categories
+                projectTabBtns.forEach(btn => btn.classList.remove('active'));
+                projectCategories.forEach(cat => cat.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding category
+                btn.classList.add('active');
+                document.getElementById(`${categoryId}-projects`).classList.add('active');
             });
         });
 
