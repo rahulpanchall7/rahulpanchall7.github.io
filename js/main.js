@@ -46,15 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Animation on scroll
+// Unified Animation on scroll
 const animateOnScroll = () => {
   const elements = document.querySelectorAll('.animate-on-scroll');
+  const windowHeight = window.innerHeight;
   
   elements.forEach(element => {
     const elementPosition = element.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
-    
-    if (elementPosition < screenPosition) {
+
+    // Using a slightly stricter trigger point similar to both versions
+    if (elementPosition < windowHeight - 100) {
       element.classList.add('animated');
     }
   });
