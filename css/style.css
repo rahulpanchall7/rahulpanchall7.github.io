@@ -365,6 +365,7 @@ nav {
 
 .robotics-label { background-color: var(--highlight-blue); }
 .android-label { background-color: var(--highlight-green); }
+.embedded-label { background-color: var(--highlight-yellow); }
 
 .project-tabs {
   display: flex;
