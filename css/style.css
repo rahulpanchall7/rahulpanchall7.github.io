@@ -501,17 +501,35 @@ nav {
 
 .project-info {
   padding: 20px;
+  width: 300px; /* set fixed width */
+  height: 150px; /* set fixed height */
+  overflow: hidden;
+  position: relative;
 }
 
 .project-info h3 {
   margin-bottom: 10px;
   font-size: 1.3rem;
+  /* Optional: prevent h3 from growing too tall */
+  max-height: 1.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .project-info p {
   font-size: 0.95rem;
   color: #e9e6e6fa;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* limit to 5 lines */
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  line-height: 1.2em;
+  max-height: 6em; /* 5 lines × 1.2em line height */
 }
+
 
 .project-skills {
   display: flex;
