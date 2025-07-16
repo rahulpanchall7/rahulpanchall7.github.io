@@ -569,6 +569,10 @@ nav {
   opacity: 1;
 }
 
+.timeline-content.active .timeline-hint {
+  display: none;
+}
+
 .arrow-icon {
   font-size: 0.7rem;
   margin-right: 4px;
