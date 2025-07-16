@@ -737,7 +737,7 @@ nav {
 
 .timeline-hint {
   font-size: 0.65rem;
-  color: var(--text-secondary, #aaa);
+  color: var(--text-primary, #aaa);
   margin-top: 10px;
   font-style: italic;
   text-align: right;
