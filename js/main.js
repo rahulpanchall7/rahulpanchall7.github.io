@@ -47,18 +47,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // experience section toggling
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const timelineContents = document.querySelectorAll('.timeline-content');
-  
+
   timelineContents.forEach(content => {
-    content.addEventListener('click', function() {
+    content.addEventListener('click', function () {
+      // Close all others
       timelineContents.forEach(item => {
         if (item !== this) item.classList.remove('active');
       });
+
+      // Toggle this one
       this.classList.toggle('active');
     });
   });
 });
+
 
 
 // Unified Animation on scroll

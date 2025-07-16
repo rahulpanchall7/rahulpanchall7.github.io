@@ -607,15 +607,6 @@ nav {
   background-color: var(--primary);
   border-radius: 5px;
   box-shadow: var(--shadow);
-}
-
-.timeline-content img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-.timeline-content {
   position: relative;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -623,6 +614,13 @@ nav {
 
 .timeline-content.active {
   transform: scale(1.02);
+}
+
+.timeline-content img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
 .timeline-details {
@@ -639,9 +637,16 @@ nav {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 
 
 /* Contact Section */
