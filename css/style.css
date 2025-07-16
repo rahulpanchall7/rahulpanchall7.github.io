@@ -735,25 +735,46 @@ nav {
   background-color: var(--primary);
 }
 
+/* ===== Timeline Hint Fix ===== */
 .timeline-hint {
-  font-size: 0.65rem;
-  color: var(--text-primary, #aaa);
-  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--accent-light);
+  margin-top: 8px;
   font-style: italic;
   text-align: right;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  height: 0;
-  overflow: hidden;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  height: auto;
+  overflow: visible;
+  display: block;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
 }
 
 .timeline-content:hover .timeline-hint {
   opacity: 1;
+  color: var(--accent);
 }
 
 .timeline-content.active .timeline-hint {
-  opacity: 0;
+  opacity: 0.6;
+}
+
+/* Optional animation enhancement */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+.timeline-hint {
+  animation: fadeInUp 0.4s ease-out forwards;
 }
 
 .arrow-icon {
