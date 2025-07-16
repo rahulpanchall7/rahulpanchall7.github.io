@@ -554,15 +554,18 @@ nav {
 #experience {
   background-color: var(--secondary);
 }
+
 .timeline-hint {
   font-size: 0.65rem;
   color: var(--text-secondary, #aaa);
   margin-top: 10px;
   font-style: italic;
   text-align: right;
-  display: block;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
 }
 
 .timeline-content:hover .timeline-hint {
@@ -570,7 +573,7 @@ nav {
 }
 
 .timeline-content.active .timeline-hint {
-  display: none;
+  opacity: 0;
 }
 
 .arrow-icon {
