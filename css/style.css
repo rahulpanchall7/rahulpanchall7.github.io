@@ -554,12 +554,11 @@ nav {
 #experience {
   background-color: var(--secondary);
 }
-
-.timeline-content:hover {
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
-  transform: scale(1.01);
+.arrow-icon {
+  font-size: 0.8rem;
+  margin-right: 5px;
+  color: var(--accent);
 }
-
 
 .timeline {
   position: relative;
