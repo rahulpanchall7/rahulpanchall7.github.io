@@ -627,13 +627,16 @@ nav {
 .job-details {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.3s ease;
+  opacity: 0;
+  transition: all 0.3s ease;
   padding: 0 15px;
 }
 
+/* Show details only on hover or when active */
 .timeline-content:hover .job-details,
 .timeline-content.active .job-details {
   max-height: 500px;
+  opacity: 1;
   padding: 15px;
   margin-top: 15px;
   border-top: 1px solid rgba(0, 180, 216, 0.3);

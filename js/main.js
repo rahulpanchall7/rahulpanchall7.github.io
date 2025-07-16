@@ -48,18 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // expereince section hivering
 document.addEventListener('DOMContentLoaded', function() {
-  // Get all timeline content elements
   const timelineContents = document.querySelectorAll('.timeline-content');
   
-  // Add click event to toggle active class
   timelineContents.forEach(content => {
     content.addEventListener('click', function() {
-      // Remove active class from all other items
       timelineContents.forEach(item => {
         if (item !== this) item.classList.remove('active');
       });
-      
-      // Toggle active class on clicked item
       this.classList.toggle('active');
     });
   });
