@@ -832,7 +832,7 @@ nav {
 
 .timeline-content {
   padding: 20px;
-  background-color: var(--primary);
+  background-color: rgba(58, 58, 90, 0.8);
   border-radius: 5px;
   box-shadow: var(--shadow);
   position: relative;
