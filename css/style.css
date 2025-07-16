@@ -714,6 +714,30 @@ nav {
     padding: 12px; /* Smaller padding on mobile */
   }
 }
+/* Thesis Wrapper: Holds both thesis-category side by side */
+.thesis-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Ensure each thesis section takes up ~half of the row */
+.thesis-category {
+  flex: 1 1 48%;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .thesis-wrapper {
+    flex-direction: column;
+  }
+
+  .thesis-category {
+    flex: 1 1 100%;
+  }
+}
+
 
 /* Experience Section */
 #experience {
