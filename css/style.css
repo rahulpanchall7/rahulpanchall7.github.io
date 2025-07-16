@@ -772,7 +772,7 @@ nav {
   content: '';
   position: absolute;
   width: 2px;
-  background-color: var(--accent);
+  background-color: var(--accent-light);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -791,7 +791,7 @@ nav {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: var(--accent);
+  background-color: var(--accent-light);
   border-radius: 50%;
   top: 15px;
   z-index: 1;
@@ -833,7 +833,7 @@ nav {
 .timeline-details {
   display: none;
   margin-top: 15px;
-  color: var(--text-secondary, #ccc);
+  color: var(--text-primary, #ccc);
   font-size: 0.95rem;
   line-height: 1.6;
   animation: fadeIn 0.3s ease-in-out;
