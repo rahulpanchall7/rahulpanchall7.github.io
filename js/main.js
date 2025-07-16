@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// expereince section hivering
+// experience section toggling
 document.addEventListener('DOMContentLoaded', function() {
   const timelineContents = document.querySelectorAll('.timeline-content');
   
@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
 
 // Unified Animation on scroll
 const animateOnScroll = () => {

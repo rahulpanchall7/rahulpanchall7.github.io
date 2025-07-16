@@ -607,14 +607,6 @@ nav {
   background-color: var(--primary);
   border-radius: 5px;
   box-shadow: var(--shadow);
-  position: relative;
-  transition: var(--transition);
-  cursor: pointer;
-}
-
-.timeline-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px -15px rgba(2, 12, 27, 0.8);
 }
 
 .timeline-content img {
@@ -623,38 +615,34 @@ nav {
   object-fit: contain;
   margin-bottom: 10px;
 }
-
-.job-details {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.3s ease;
-  padding: 0 15px;
+.timeline-content {
+  position: relative;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-/* Show details only on hover or when active */
-.timeline-content:hover .job-details,
-.timeline-content.active .job-details {
-  max-height: 500px;
-  opacity: 1;
-  padding: 15px;
+.timeline-content.active {
+  transform: scale(1.02);
+}
+
+.timeline-details {
+  display: none;
   margin-top: 15px;
-  border-top: 1px solid rgba(0, 180, 216, 0.3);
+  color: var(--text-secondary, #ccc);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-.job-details ul {
-  padding-left: 20px;
+.timeline-content.active .timeline-details {
+  display: block;
 }
 
-.job-details li {
-  margin-bottom: 8px;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.job-details li:last-child {
-  margin-bottom: 0;
-}
 
 /* Contact Section */
 #contact {
