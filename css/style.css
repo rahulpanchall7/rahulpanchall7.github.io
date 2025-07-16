@@ -567,7 +567,7 @@ nav {
 }
 
 .thesis-degree {
-  font-size: 1rem; /* Reduced from 1.8rem */
+  font-size: 1.2rem; /* Reduced from 1.8rem */
   color: var(--accent-light);
   margin-bottom: 20px; /* Reduced from 30px */
   position: relative;
